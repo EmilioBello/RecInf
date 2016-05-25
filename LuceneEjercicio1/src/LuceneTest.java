@@ -32,7 +32,6 @@ public class LuceneTest {
 		    //Directory index = FSDirectory.open(Paths.get("/tmp/testindex"));
 			
 			IndexWriterConfig config = new IndexWriterConfig(analyzer);
-			
 			IndexWriter w = new IndexWriter(index, config);
 			
 			//To add elements to document use function addDoc
@@ -82,7 +81,7 @@ public class LuceneTest {
 		  Document doc = new Document();
 		  
 		  doc.add(new TextField("title", title, Field.Store.YES)); // A text field will be tokenized		  
-		  doc.add(new StringField("author", author, Field.Store.YES)); // We use a string field for isbn because we don\'t want it tokenized
+		  doc.add(new StringField("author", author, Field.Store.YES)); // We use a string field for author because we don't want it tokenized
 		  
 		  w.addDocument(doc);
 	}
